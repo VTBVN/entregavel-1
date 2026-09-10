@@ -1,0 +1,35 @@
+# Dependências e builds
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+storybook-static/
+
+# Ambiente e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Supabase local
+.supabase/
+supabase/.temp/
+
+# Editores e sistema
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
