@@ -12,6 +12,10 @@ Principais atores:
 - administrador/cliente Startellite;
 - desenvolvedor do projeto;
 - usuário do Orbitinho.
+### Governança do projeto
+
+Victor Barbosa Viana é o Product Owner e Scrum Master. Como Product Owner, define e prioriza o valor do produto, esclarece requisitos e valida o aceite funcional. Como Scrum Master, facilita as cerimônias, acompanha impedimentos e protege o fluxo de trabalho. Victor não participa da implementação, revisão ou integração de código; as responsabilidades técnicas permanecem com os integrantes designados no backlog.
+
 
 ## 2. Requisitos funcionais
 

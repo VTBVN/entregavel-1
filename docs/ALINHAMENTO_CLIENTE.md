@@ -1,10 +1,4 @@
-# Registro do alinhamento com o cliente
-
-## Evidências
-
-- Print/foto da reunião: **pendente de anexação pela equipe**.
-- Destino sugerido: `docs/evidencias/reuniao-cliente-AAAA-MM-DD.jpg`.
-- Não foi criada uma evidência artificial. Antes da submissão, anexar uma imagem autorizada e registrar data, participantes e consentimento de uso.
+# Alinhamento com o cliente — perguntas e decisões da reunião
 
 ## Entendimento consolidado
 
@@ -15,65 +9,32 @@
 - A página pública deve usar ativação explícita e lista branca de dados.
 - Pagamentos, webhooks, cron jobs, OAuth, APIs públicas existentes, AWS e migração completa de legado não fazem parte do case.
 - Haverá alinhamento semanal, ajuste flexível de pessoas e demonstrações incrementais.
+- Victor Barbosa Viana será o ponto de governança do projeto como Scrum Master e Product Owner, responsável por backlog, priorização, facilitação e aceite funcional, sem atuação em código.
 
-## Decisões propostas para validação
+## Perguntas da reunião de alinhamento — 10/09/2026
 
-| ID | Proposta | Estado |
-|---|---|---|
-| DEC-01 | Pedro lidera Orbitinho e revisa mudanças críticas | A validar com Pedro/cliente |
-| DEC-02 | Wesley lidera homologação e CI/testes | A validar com cliente |
-| DEC-03 | Guilherme lidera página pública e componentes estritamente necessários | A validar com cliente |
-| DEC-04 | Thiago executa fatias pequenas de Orbitinho/testes com pareamento | A validar com cliente |
-| DEC-05 | O gate da S2 bloqueia integração da página com banco não validado | A validar com cliente |
-| DEC-06 | “Criar tarefa” será o primeiro comando demonstrável do Orbitinho | A validar com cliente |
+### Frente A — Página Pública de Espaçonaves (peso 20%)
 
-## Dúvidas pendentes
+1. Para o controle de visibilidade, o escopo prevê granularidade campo a campo, como no LinkedIn, ou um interruptor geral usando `is_public`?
+   **Registro da reunião:** O cliente ainda não definiu o modelo final. Foi discutido que um mesmo astronauta pode atuar em diferentes Espaçonaves e que, em princípio, é preferível permitir que o astronauta defina quais informações poderão ser visualizadas. A granularidade dessa configuração ainda depende de validação de escopo e viabilidade.
+2. A lista de campos da view `public_spaceship_profiles` já foi definida pelo cliente ou deve ser proposta pela equipe para validação?
+   **Registro da reunião:** A lista de campos deverá ser revalidada após a equipe obter acesso à plataforma e realizar uma reunião específica com o cliente.
 
-### Repositório e execução
+### Frente C — Design System (peso 15%)
 
-1. Qual é a URL do repositório privado, a branch-base e a política de merge?
-2. Quais versões de Node, gerenciador de pacotes e comandos oficiais devem ser usados?
-3. Já existem lint, typecheck, testes, Storybook e preview deployments? Quais devem ser preservados?
-4. Quem aprova PRs e quem aplica migrations/deploy em produção?
+3. Existe brand book, guia de estilo ou definição de identidade visual/verbal que deve orientar os componentes? Caso não exista, qual é o posicionamento e o tom de voz da Startellite?
+   **Registro da reunião:** Atualmente não há um brand book disponível. O cliente irá fornecê-lo assim que possível. Até que o material seja entregue, a equipe deverá preservar o template e a identidade visual já existentes na página.
+4. Qual é o mercado primário da Startellite? A experiência deve priorizar o público brasileiro apesar da alternância entre PT e EN?
+   **Registro da reunião:** A visão do cliente é atender ao mercado global. Embora o escopo ainda não esteja claramente definido, a orientação preliminar indica iniciar pelo mercado brasileiro, mantendo desde o início uma infraestrutura preparada para expansão internacional.
 
-### Homologação e dados
+### Frente D — Assistente de IA Orbitinho (peso 30%)
 
-5. Quando serão fornecidos o dump estrutural e o projeto Supabase de homologação?
-6. Quais buckets, funções, triggers e policies são indispensáveis ao recorte?
-7. Quais estados fictícios de empresas, satélites, Espaçonaves e missões devem existir no seed?
+5. Qual é o estado atual do Orbitinho, incluindo stack, comandos cobertos e integrações em funcionamento?
+   **Registro da reunião:** O Orbitinho utiliza o modelo Gemini 2.5 Flash. Atualmente, permite acessar páginas por comandos de voz e conversar com o cliente por voz. As demais funcionalidades, integrações e limitações deverão ser validadas diretamente na plataforma.
+6. O que significa, na prática, “programar para o usuário enquanto ele está longe do notebook”? Qual nível de autonomia e quais IDEs são prioritários (VS Code, Claude, Cursor ou Antigravity)?
+   **Registro da reunião:** O cliente espera que o Orbitinho ofereça essa capacidade literalmente, em linha com o funcionamento já observado em outras soluções de inteligência artificial. O nível exato de autonomia e as ferramentas prioritárias ainda deverão ser detalhados e validados na plataforma.
 
-### Página pública e privacidade
+> A Frente D concentra 30% da avaliação e possui menor definição no case. É necessário aprovar um recorte realista para as oito semanas, com validação de Victor como Product Owner e do cliente.
 
-8. Como o slug será criado, alterado e reservado? Ele precisa ser único sem diferenciar maiúsculas?
-9. Qual é a allowlist definitiva de campos de `public_spaceship_profiles`?
-10. Onde ficam registrados os opt-ins de membros e consentimentos de clientes do portfólio?
-11. Quais métricas de autoridade podem ser públicas e como são calculadas?
-12. Para onde a proposta anônima é enviada, por quanto tempo os dados ficam retidos e qual limite de requisições deve ser aplicado?
 
-### Orbitinho
-
-13. Qual é a arquitetura atual, o modelo utilizado e o orçamento aceitável de tokens/latência?
-14. Quais comandos escritos e de voz têm prioridade em desktop e mobile?
-15. Quais fontes podem compor a base de conhecimento e quais informações são confidenciais?
-16. O que significa “programar para o usuário” neste ciclo: gerar instruções, criar tarefa, produzir patch ou integrar diretamente com IDEs?
-17. Quais ações sempre exigem confirmação e quais dados podem ser registrados em logs?
-
-### Gestão
-
-18. Qual será o dia fixo da reunião semanal e quem representa o cliente?
-19. O case menciona em trechos diferentes quatro e cinco desenvolvedores; confirmamos que a equipe efetiva é Pedro, Wesley, Guilherme e Thiago?
-20. Qual ferramenta será a fonte oficial do backlog e das evidências: Startellite, GitHub Projects ou outra?
-
-## Modelo para as próximas reuniões
-
-```text
-Data e participantes:
-Evidência:
-Entregas demonstradas:
-Feedback do cliente:
-Decisões tomadas:
-Dúvidas/bloqueios:
-Mudanças de prioridade ou escopo:
-Próximos passos, responsáveis e prazo:
-```
 

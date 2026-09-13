@@ -38,6 +38,8 @@ Cada PR deve informar:
 - testes criados ou executados;
 - impacto em banco, privacidade, segurança e deploy;
 - rollback ou forma de desativação quando houver risco operacional.
+Victor Barbosa Viana valida o objetivo e o aceite funcional do item como Product Owner e pode facilitar a discussão como Scrum Master. Essa validação não substitui revisão técnica e Victor não atua como autor, revisor, aprovador ou integrador de código.
+
 
 ### Aprovações mínimas
 
@@ -45,6 +47,7 @@ Cada PR deve informar:
 - rota pública, exposição de dados, migrations, RLS ou Orbitinho: aprovação de Pedro;
 - banco/homologação/CI: revisão adicional de Wesley;
 - interface/Design System: revisão adicional de Guilherme;
+- aceite funcional e prioridade: validação de Victor, sem aprovação técnica de código;
 - o autor não aprova nem integra o próprio PR sozinho.
 
 ## Segurança

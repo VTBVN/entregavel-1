@@ -10,11 +10,11 @@ A Startellite é uma plataforma que conecta desenvolvedores de software a projet
 
 O trabalho está dividido em cinco frentes:
 
-1. ambiente reproduzível de homologação com Supabase e dados fictícios;
-2. página pública compartilhável de Espaçonaves;
-3. testes automatizados e integração contínua em Pull Requests;
-4. Design System aditivo utilizado pela nova página;
-5. aprimoramento do assistente de IA Orbitinho.
+1. Frente 0 — ambiente reproduzível de homologação com Supabase e dados fictícios;
+2. Frente A — página pública compartilhável de Espaçonaves;
+3. Frente B — testes automatizados e integração contínua em Pull Requests;
+4. Frente C — Design System aditivo utilizado pela nova página;
+5. Frente D — aprimoramento do assistente de IA Orbitinho.
 
 ## Objetivo
 
@@ -33,15 +33,18 @@ Fortalecer a base de engenharia da aplicação e entregar uma nova superfície p
 Versões, gerenciador de pacotes e comandos exatos serão registrados após o handover do repositório. Nenhuma nova dependência paga será adotada sem aprovação do cliente.
 
 ## Integrantes e responsabilidades
+Victor Barbosa Viana exerce simultaneamente os papéis de **Scrum Master** e **Product Owner**. Sua atuação é exclusivamente de produto e facilitação: priorização e manutenção do backlog, definição e validação de objetivos, alinhamento com o cliente, facilitação das cerimônias e remoção de impedimentos. Victor **não desenvolverá, revisará, aprovará nem integrará código**, nem será responsável por migrations, CI, testes automatizados ou deploy.
+
 
 | Integrante | Responsabilidade principal | Apoio e revisão |
 |---|---|---|
+| Victor Barbosa Viana | Scrum Master e Product Owner — produto, backlog, cerimônias e aceite | Alinhamento com cliente e remoção de impedimentos; sem atuação em código |
 | Pedro Pereira | Frente D — Orbitinho; liderança técnica e integração | Revisão de arquitetura, privacidade, segurança, banco e IA |
 | Wesley Lima Silva | Frente 0 — homologação; Frente B — testes e CI | Apoio à página pública e ao Design System |
 | Guilherme Kenzo Taba Nakamura | Frente A — página pública; Frente C — componentes necessários | Testes de frontend e documentação visual |
 | Thiago Brasileiro de Sousa | Entregas assistidas no Orbitinho e em testes | Documentação, demonstração e casos de regressão |
 
-A distribuição considera experiência declarada, interesse, disponibilidade e senioridade. Ela será revista ao final da segunda semana, quando a homologação deve estar validada.
+A distribuição técnica considera experiência declarada, interesse, disponibilidade e senioridade. Victor mantém a responsabilidade de produto e facilitação durante todo o ciclo; a distribuição técnica será revista ao final da segunda semana, quando a homologação deve estar validada.
 
 ## Escopo essencial
 
@@ -72,6 +75,8 @@ O detalhamento está em [docs/REQUISITOS.md](docs/REQUISITOS.md) e o plano de ex
 - branches curtas: `feat/ST-<id>-descricao`, `fix/ST-<id>-descricao`, `docs/ST-<id>-descricao`;
 - commits objetivos, preferencialmente no padrão Conventional Commits;
 - toda mudança entra por Pull Request ligado a um item do backlog;
+- Victor mantém o Product Backlog, prioriza itens e valida o aceite funcional; essa atuação não inclui alterações em código;
+- Victor facilita Planning, Daily, Review e Retrospective e remove impedimentos;
 - PR deve conter contexto, evidência, testes e riscos;
 - mudanças em dados públicos, RLS, migrations ou IA exigem revisão de Pedro;
 - não integrar PR com typecheck, lint ou testes falhando.
