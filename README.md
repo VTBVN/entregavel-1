@@ -71,7 +71,7 @@ O detalhamento está em [docs/REQUISITOS.md](docs/REQUISITOS.md) e o plano de ex
 ## Organização e fluxo de trabalho
 
 - `main`: branch protegida e sob governança do cliente;
-- `develop`, se aprovada pelo cliente: integração antes de `main`;
+- `stage`, se aprovada pelo cliente: integração antes de `main`;
 - branches curtas: `feat/ST-<id>-descricao`, `fix/ST-<id>-descricao`, `docs/ST-<id>-descricao`;
 - commits objetivos, preferencialmente no padrão Conventional Commits;
 - toda mudança entra por Pull Request ligado a um item do backlog;
